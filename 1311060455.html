@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+
+		<div style="background-color:yellow" id="changeColorDiv">
+		<p>
+			Test
+		</p>
+		<button id="button">
+			Click me!
+		</button>
+		
+		
+		</div>
+		<div id="setColor">
+		<h1>Add Solution</h1>
+		<p>First Pragraph</p>
+		<p>Second Pragraph</p>
+		</div>
+		
+		<form>
+		Some number </br>
+		<input type="number" id="num1"></input></br>
+		<p id="loi1"></p>
+		Some number </br>
+		<input type="number" id="num2"></input></br>
+		<p id="loi2"></p>
+		Some number </br>
+		<input type="number"id="num3"></input></br>
+		<p id="loi3"></p>
+		<input type="submit" id="check"></input>
+		</form>
+		
+		<table>
+			<select>
+			<option>Email</option>
+			</select>
+			Components
+			<input type="text"></input>
+			<input type="text"></input></br>
+			<tr>
+				<td>
+					<input type="submit" id="addRow" value="Add Row"></input>
+					<input type="text"></input>
+				</td>
+			</tr>
+		</table>
+	<style>
+	.myClass{
+		color : red;
+	}
+	</style>
+	<script>
+		// cau 1
+		$("#button").click(function (){
+			$("#changeColorDiv").css("background-color","red");
+		});
+		
+		//cau 2
+		$("h1").click(function(){
+			$("#setColor").addClass("myClass");
+		});
+		//cau 3
+		$("#check").click(function(){
+			var num1 = $('#num1');
+			var num2 = $('#num2');
+			var num3 = $('#num3');
+			if(num1.val().length == 0){
+				$("#loi1").append("A number is required");
+			};
+			if(!num2.val()/10==0){
+				$("#loi1").append("The number should be divisible by 10");
+
+			};
+			if(num1.val().length < 7){
+				$("#loi1").append("The number should be at least 7 digits");
+			
+		});
+		// cau 4
+		$("#addRow").click(function(){
+			$("table tr:last").after("<tr> <td> <input type='submit' id='addRow'></input> <input type='text'></input> </td> </tr>")
+		});
+	</script>
+</body>
+
+</html>
